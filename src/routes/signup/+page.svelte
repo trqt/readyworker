@@ -2,16 +2,27 @@
 	let cpf = '';
 	let name = '';
 	let email = '';
+	let phone = 'LEMBRAR';
 	let desc = '';
+	let category = '';
 	let password = '';
+	let password_check = '';
 
-	function onSubmit(e: any) {
+	function onSubmit(_: any) {
 		// TODO: Validate input
+		// TODO: Upload photo to azure
+
+		if (password != password_check) {
+			alert('Senhas não são iguais');
+			return;
+		}
+
 		const data = {
 			role: 'worker',
 			cpf: cpf,
 			name: name,
 			email: email,
+			phone: phone,
 			description: desc,
 			password: password
 		};
@@ -32,7 +43,7 @@
 </script>
 
 <svelte:head>
-	<title>ReadyWorker | Login</title>
+	<title>ReadyWorker | Cadastro Trabalhador</title>
 </svelte:head>
 
 <main>
@@ -50,12 +61,25 @@
 			<input type="email" name="email" required bind:value={email} />
 		</div>
 		<div>
+			<!-- TODO: Puxar do BD -->
+			<label for="categories">Escolha uma categoria:</label>
+			<select id="categories" name="categories" bind:value={category}>
+				<option value="pedreiro">Pedreiro</option>
+				<option value="programador">Pedreiro Digital</option>
+				<option value="sitiante">Atendente de bar</option>
+			</select>
+		</div>
+		<div>
 			<label for="name">Descrição</label>
 			<textarea name="desc" required bind:value={desc} />
 		</div>
 		<div>
 			<label for="name">Senha</label>
 			<input type="password" required name="password" bind:value={password} />
+		</div>
+		<div>
+			<label for="name">Confirmar senha</label>
+			<input type="password" required name="password" bind:value={password_check} />
 		</div>
 		<button type="submit">Enviar</button>
 	</form>
