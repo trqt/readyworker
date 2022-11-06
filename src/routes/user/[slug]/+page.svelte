@@ -1,9 +1,17 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import { get } from '$lib/api';
+	import { del, get } from '$lib/api';
 	import token from '$lib/stores/token';
+	import userid from '$lib/stores/userid';
+	import { browser } from '$app/environment';
 	let user = { name: '...', description: '...' };
 	let comments: any[] = [];
+
+	if ($token == '') {
+		if (browser) {
+			window.location.href = '/login';
+		}
+	}
 
 	export let data: PageData;
 
@@ -23,19 +31,49 @@
 		return author;
 	}
 
-	$: console.log(user);
-	$: console.log(comments);
+	function delete_comment(id: number) {
+		del(`comment/${id}`, $token).then(() => {
+			if (browser) {
+				window.location.reload();
+			}
+		});
+	}
+
+	let gig_desc: string;
+	function create_gig(_: any) {}
 </script>
 
-<div>{user.name}</div>
-<div>{user.description}</div>
+<svelte:head>
+	<title>{user.name}</title>
+</svelte:head>
+
+<h1>Perfil de {user.name}</h1>
+<span>{user.description}</span>
+<hr />
+<h3>Requisição de trabalho</h3>
+<form action="" on:submit|preventDefault={create_gig}>
+	Descrição:<br />
+	<textarea name="gig_desc" id="gig_desc" cols="30" rows="10" required bind:value={gig_desc} />
+	<button>Requisitar trabalho</button>
+</form>
 <h2>Comentários</h2>
 {#each comments as comment}
 	<h3>
 		Autor: {#await author(comment.author_id) then author_name}
-			{author_name}
+			<a href="/user/{comment.author_id}" target="_blank">{author_name}</a>
 		{/await}
+		<!-- TODO: Limit to 1 trailling number -->
+		Nota: {comment.rating / 2}
 	</h3>
 	<div>{comment.content}</div>
 	<br />
+	<!-- TODO: Admin -->
+
+	{#if comment.author_id == $userid}
+		<button
+			on:click={() => {
+				delete_comment(comment.ID);
+			}}>Deletar comentário</button
+		>
+	{/if}
 {/each}

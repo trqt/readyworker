@@ -1,12 +1,20 @@
 <script lang="ts">
+	import { get } from '$lib/api';
+
 	let cpf = '';
 	let name = '';
 	let email = '';
+	// TODO: Add Phone
 	let phone = 'LEMBRAR';
 	let desc = '';
 	let category = '';
 	let password = '';
 	let password_check = '';
+
+	let category_list: string[] = ['...'];
+	get('categories', '').then((res) => {
+		category_list = res;
+	});
 
 	function onSubmit(_: any) {
 		// TODO: Validate input
@@ -22,6 +30,7 @@
 			cpf: cpf,
 			name: name,
 			email: email,
+			category: category,
 			phone: phone,
 			description: desc,
 			password: password
@@ -61,12 +70,11 @@
 			<input type="email" name="email" required bind:value={email} />
 		</div>
 		<div>
-			<!-- TODO: Puxar do BD -->
 			<label for="categories">Escolha uma categoria:</label>
 			<select id="categories" name="categories" bind:value={category}>
-				<option value="pedreiro">Pedreiro</option>
-				<option value="programador">Pedreiro Digital</option>
-				<option value="sitiante">Atendente de bar</option>
+				{#each category_list as category}
+					<option value={category}>{category}</option>
+				{/each}
 			</select>
 		</div>
 		<div>

@@ -2,6 +2,14 @@
 	import { get } from '$lib/api';
 	import token from '$lib/stores/token';
 	import userid from '$lib/stores/userid';
+	import { browser } from '$app/environment';
+
+	if ($token == '') {
+		if (browser) {
+			window.location.href = '/login';
+		}
+	}
+
 	let user = { name: '...', description: '...' };
 	get(`user/${$userid}`, $token).then((res) => {
 		user = res;
