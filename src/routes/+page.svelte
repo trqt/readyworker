@@ -16,6 +16,7 @@
 		user = res;
 	});
 
+	// TODO: Check if hirer
 	let showsearch = false;
 	let category_list: string[] = ['...'];
 	if (user.role == 'hirer') {
@@ -64,9 +65,19 @@
 
 	<br />
 	<button on:click={logoff}>Sair</button>
-{:else}
-	<h1>ReadyWorker</h1>
-
-	<a href="login">Login</a>
-	<a href="signup">Cadastre-se</a>
 {/if}
+
+<div class="flexinicialrw">
+	<p class="minitinicio">Práticas disponíveis</p>
+	<p class="subinicio">Anuncie suas capacidades aqui e aguarde alguém o empregar</p>
+
+	<ul class="ulinicialrw">
+		<li>
+			<div>
+				No ReadyWorker você pode cadastrar-se e criar seu próprio currículo ou procurar um
+				profissional para te auxiliar
+			</div>
+		</li>
+		<li />
+	</ul>
+</div>

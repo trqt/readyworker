@@ -1,0 +1,151 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+/*Imputs do Login e do Cadastro*/
+input.cadastro[type=text]{
+	width: 50vw;
+	border: 2px solid #aaa;
+	margin:; 8px 0px;
+	margin-left: 60px;
+	outline: none;
+	padding: 10px;
+	box-sizing: border-box;
+	border-radius: 6px;
+	display: block;
+	margin:  0 auto;
+
+}
+
+input.login[type=text]{
+	width: 50vw;
+	border: 2px solid #aaa;
+	margin:  8px 0px;
+	outline: none;
+	padding: 10px;
+	box-sizing: border-box;
+	border-radius: 6px;
+	display: block;
+	margin:  0 auto;
+
+}
+
+input.login[type=password]{
+	width: 50vw;
+	border: 2px solid #aaa;
+	margin:  8px 0px;
+	outline: none;
+	padding: 10px;
+	box-sizing: border-box;
+	border-radius: 6px;
+	display: block;
+	margin:  0 auto;
+
+}
+/*Configurações de títulos gerais*/
+p.title{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+	font-size: 55px;
+}
+ /*Menu das páginas*/
+#menu-horiz ul {
+	list-style: none;
+	padding: 0;
+	background-color: rgb(37, 37, 39);
+}
+
+#menu-horiz ul li{
+	display: inline;
+}
+
+#menu-horiz ul li a{
+	text-decoration: none;
+	padding: 20px;
+	display: inline-block;
+	color: #dfdfdf;
+	transition: background .5s;
+}
+
+#menu-horiz ul li a:hover{
+	background-color: #1e96d6;
+}
+
+#menu-horiz ul li:last-child a{
+	float: center;
+}
+/*Trecho da página de inicial "Como funciona"*/
+div.flexinicialrw{
+	padding:  50px 0;
+	background-color: #3c4049;
+	wifth:  center;
+	color:  #fff;
+	width:  100vw;
+	list-style-type: none;
+	margin:  0 auto;
+	margin-top: 60px;
+	overflow:  hidden;
+}
+
+div.flexinicialrw ul{
+	width: 100vw;
+	list-style-type: none;
+	margin:  0 auto;
+	margin-top: 60px;
+	overflow: hidden;
+	display:  block;
+}
+
+div.flexinicialrw li{
+	text-align:  center;
+}
+
+div.sobresessão{
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background:  url(sobrerw.jpg) no-repeat left;
+}
+
+p.minitinicio{
+	font-size:  2.8em;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	text-align: center;
+}
+
+p.subinicio{
+	font-size: 1.5em;
+	font-family:  serif;
+	text-align:  center;
+}
+
+/*edição de textos da página sobre*/
+p.sobretitulo{
+	font-family: 'Open Sans', sans-serif;
+	padding: 5vw 5vh;
+	background-color: #eceff1;
+	min-width: 75px;
+	width:  75%;
+	font-size:  30px;
+}
+
+p.sobresubtitulo{
+	font-family: 'Open Sans', sans-serif;
+	padding: 0vw 5vh;
+	background-color: #eceff1;
+	min-width: 75px;
+	width:  75%;
+	font-size:  20px;
+}
+
+p.sobretexto{
+	font-family: 'Open Sans', sans-serif;
+	padding:  3vw 5vh;
+	background-color:  #eceff1;
+	min-width: 70px;
+	width:  75%;
+}

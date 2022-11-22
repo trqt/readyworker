@@ -4,7 +4,7 @@
 	import token from '$lib/stores/token';
 	import userid from '$lib/stores/userid';
 	import { browser } from '$app/environment';
-	let user = { name: '...', description: '...' };
+	let user = { name: '...', description: '...', photo_url: '' };
 	let comments: any[] = [];
 
 	if ($token == '') {
@@ -26,8 +26,6 @@
 		let author = '...';
 		const res = await get(`user/${id}`, $token);
 		author = res.name;
-		console.log(res);
-		console.log(author);
 		return author;
 	}
 
@@ -44,10 +42,16 @@
 </script>
 
 <svelte:head>
-	<title>{user.name}</title>
+	<title>ReadyWorker | {user.name}</title>
 </svelte:head>
 
 <h1>Perfil de {user.name}</h1>
+{#if user.photo_url == ''}
+	<img src="/avatar.png" alt="Avatar de {user.name}" />
+{:else}
+	<img src={user.photo_url} alt="Avatar de {user.name}" />
+{/if}
+<br />
 <span>{user.description}</span>
 <hr />
 <h3>Requisição de trabalho</h3>
@@ -60,7 +64,7 @@
 {#each comments as comment}
 	<h3>
 		Autor: {#await author(comment.author_id) then author_name}
-			<a href="/user/{comment.author_id}" target="_blank">{author_name}</a>
+			<a href="/user/{comment.author_id}" target="_blank" rel="noreferrer">{author_name}</a>
 		{/await}
 		<!-- TODO: Limit to 1 trailling number -->
 		Nota: {comment.rating / 2}

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
+
 	import token from '$lib/stores/token';
 	import userid from '$lib/stores/userid';
 
@@ -6,9 +8,9 @@
 	let email = '';
 	let password = '';
 
-	function onSubmit(e: any) {
+	function onSubmit(_: any) {
 		const data = { email: email, password: password };
-		fetch('http://localhost:8080/login', {
+		fetch('/api/login', {
 			method: 'POST',
 			credentials: 'include',
 			body: JSON.stringify(data),
@@ -18,9 +20,13 @@
 		})
 			.then((r) => r.json())
 			.then((json) => {
-				console.log(json);
 				userid.set(json.userid);
 				token.set(json.token);
+
+				if (browser) {
+					alert('LOGADO 👍');
+					window.location.href = '/';
+				}
 			});
 	}
 </script>

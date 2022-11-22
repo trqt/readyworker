@@ -22,8 +22,6 @@
 
 		users = res;
 	});
-
-	$: console.log(users);
 </script>
 
 {#each users as user}
