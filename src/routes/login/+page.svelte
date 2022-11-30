@@ -4,12 +4,11 @@
 	import token from '$lib/stores/token';
 	import userid from '$lib/stores/userid';
 
-	//let cpf = '';
-	let email = '';
+	let cpf = '';
 	let password = '';
 
 	function onSubmit(_: any) {
-		const data = { email: email, password: password };
+		const data = { cpf: cpf, password: password };
 		fetch('/api/login', {
 			method: 'POST',
 			credentials: 'include',
@@ -20,11 +19,16 @@
 		})
 			.then((r) => r.json())
 			.then((json) => {
+				if (json.userid == undefined || json.token == undefined) {
+					alert('Usuário não cadastrado e/ou senha errada');
+					window.location.reload();
+					return;
+				}
+
 				userid.set(json.userid);
 				token.set(json.token);
 
 				if (browser) {
-					alert('LOGADO 👍');
 					window.location.href = '/';
 				}
 			});
@@ -36,35 +40,29 @@
 </svelte:head>
 
 <main>
+	<p class="title">Login</p>
 	<form on:submit|preventDefault={onSubmit}>
-		<div>
-			<label for="name">E-mail</label>
-			<input type="email" name="email" required bind:value={email} />
-		</div>
-		<div>
-			<label for="name">Senha</label>
-			<input type="password" required name="password" bind:value={password} />
-		</div>
-		<button type="submit">Enviar</button>
+		<input
+			type="text"
+			class="login"
+			placeholder="CPF"
+			name="cpf"
+			size="11"
+			maxlength="11"
+			minlength="11"
+			pattern="[0-9.]+"
+			bind:value={cpf}
+			required
+		/><br />
+
+		<input
+			type="password"
+			name="password"
+			class="login"
+			placeholder="Senha"
+			bind:value={password}
+			required
+		/><br />
+		<button type="submit" class="submit-btn">Enviar</button>
 	</form>
 </main>
-
-<style>
-	* {
-		box-sizing: border-box;
-	}
-	form {
-		display: flex;
-		flex-direction: column;
-		width: 300px;
-	}
-
-	form > div {
-		display: flex;
-		justify-content: space-between;
-	}
-
-	form > div + * {
-		margin-top: 10px;
-	}
-</style>

@@ -1,13 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap');
 * {
 	margin: 0;
 	padding: 0;
 	border: 0;
 }
+article {
+  margin: 3%;
+}
+a:visited, a {
+  text-decoration: none; 
+  color: #132f81;
+
+}
+
+a:hover {
+  text-decoration: underline;
+}
 /*Imputs do Login e do Cadastro*/
-input.cadastro[type=text]{
+input.cadastro{
 	width: 50vw;
 	border: 2px solid #aaa;
-	margin:; 8px 0px;
+	margin: 8px 0;
 	margin-left: 60px;
 	outline: none;
 	padding: 10px;
@@ -18,7 +31,22 @@ input.cadastro[type=text]{
 
 }
 
-input.login[type=text]{
+textarea.cadastrolongo{
+	width: 50vw;
+	height: 20vh;
+	border: 2px solid #aaa;
+	margin: 8px 0;
+	margin-left: 60px;
+	outline: none;
+	padding: 10px;
+	box-sizing: border-box;
+	border-radius: 6px;
+	display: block;
+	margin:  0 auto;
+
+}
+
+input.login{
 	width: 50vw;
 	border: 2px solid #aaa;
 	margin:  8px 0px;
@@ -31,10 +59,28 @@ input.login[type=text]{
 
 }
 
-input.login[type=password]{
+
+.cat {
+  width: 50vw;
+	margin: 8px 0;
+	margin-left: 60px;
+	margin-bottom: 1vh;
+	outline: none;
+	padding: 10px;
+	display: block;
+	margin:  0 auto;
+
+}
+.tos {
+  margin-left: 25%;
+  margin-bottom: 1vh;
+}
+
+button.submit-btn{
 	width: 50vw;
 	border: 2px solid #aaa;
-	margin:  8px 0px;
+	margin: 8px 0;
+	margin-left: 60px;
 	outline: none;
 	padding: 10px;
 	box-sizing: border-box;
@@ -42,19 +88,141 @@ input.login[type=password]{
 	display: block;
 	margin:  0 auto;
 
+}
+#file-to-upload {
+  visibility: hidden;
 }
 /*Configurações de títulos gerais*/
+p.pulalinha{
+	height: 10vh;
+}
+
 p.title{
 	margin-top: 10px;
 	margin-bottom: 10px;
 	text-align: center;
 	font-size: 55px;
+	font-family: helvetica;
 }
+
+p.subtitle{
+	padding: 8px;
+	font-style: bold;
+	text-align: center;
+	font-family: helvetica;
+	font-size: 30px;
+	background-color: #ffffff;
+}
+
+.outroslinks {
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    list-style: none;
+    float: left;
+    width: 98vw;
+	  bottom: 10px;
+}
+
+.colink{
+	float: left;
+	margin-right: 60px;
+	font-family: helvetica;
+	align-content: center;
+}
+
+.colink ul{
+	list-style-type: none;
+	margin: 30px;
+	margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.colink ul li{
+	padding: 4px 0;
+	display: list-item;
+	text-align: -webkit-match-parent;
+}
+
+a.linkext{
+	font-family: helvetica;
+	font-size: 15px;
+	text-align: left;
+	color: #132f81;
+}
+
+.linkext:hover{
+	color: #1f4ccf;
+	text-decoration: underline;
+}
+
+.outroslinksex {
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    list-style: none;
+    float: left;
+    width: 98vw;
+	  position: absolute;
+		bottom: 10px;
+}
+
+.colinkex{
+	float: left;
+	margin-right: 60px;
+	font-family: helvetica;
+	align-content: center;
+}
+
+.colinkex ul{
+	list-style-type: none;
+	margin: 30px;
+	margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.colinkex ul li{
+	padding: 4px 0;
+	display: list-item;
+	text-align: -webkit-match-parent;
+}
+
+a.linkextex{
+	font-family: helvetica;
+	font-size: 15px;
+	text-align: left;
+	color: #132f81;
+}
+
+.linkextex:hover{
+	color: #1f4ccf;
+	text-decoration: underline;
+}
+
+.linksimples{
+	font-family: helvetica;
+	font-size: 15px;
+	padding-bottom: 10px;
+	color:#132f81;
+}
+
+.linksimples:hover{
+	color: #1f4ccf;
+	text-decoration: underline;
+}
+
  /*Menu das páginas*/
 #menu-horiz ul {
 	list-style: none;
 	padding: 0;
 	background-color: rgb(37, 37, 39);
+	text-align: center;
 }
 
 #menu-horiz ul li{
@@ -63,71 +231,104 @@ p.title{
 
 #menu-horiz ul li a{
 	text-decoration: none;
-	padding: 20px;
+	padding: 15px;
 	display: inline-block;
 	color: #dfdfdf;
 	transition: background .5s;
+	vertical-align: middle;
 }
 
 #menu-horiz ul li a:hover{
 	background-color: #1e96d6;
 }
 
-#menu-horiz ul li:last-child a{
-	float: center;
-}
 /*Trecho da página de inicial "Como funciona"*/
-div.flexinicialrw{
-	padding:  50px 0;
-	background-color: #3c4049;
-	wifth:  center;
-	color:  #fff;
-	width:  100vw;
-	list-style-type: none;
-	margin:  0 auto;
-	margin-top: 60px;
-	overflow:  hidden;
-}
 
-div.flexinicialrw ul{
-	width: 100vw;
-	list-style-type: none;
-	margin:  0 auto;
-	margin-top: 60px;
-	overflow: hidden;
+
+.maisavaliados {
 	display:  block;
+	height: 250px;
+	width: 100%;
+	margin:  auto;
+	margin-top:  20px;
+	position:  relative;
+
 }
 
-div.flexinicialrw li{
-	text-align:  center;
+.maisavaliados li{
+	list-style:  none;
+	position: absolute;
 }
 
+.maisavaliados img{
+	margin: auto;
+    height: 100%;
+    width: 100%;
+    vertical-align: top;
+}
+
+.maisavaliados input {
+	display:  none;
+}
+
+.maisavaliados label{
+	background-color: #ffffff;
+	bottom: 10px;
+	cursor: pointer;
+    display: block;
+    height: 10px;
+    position: absolute;
+    width: 10px;
+    z-index: 10;
+}
+
+.maisavaliados li:nth-child(1) label {
+    left: 10px;
+}
+
+.maisavaliados li:nth-child(2) label {
+    left: 40px;
+}
+
+.maisavaliados li:nth-child(3) label {
+    left: 70px;
+}
+
+.maisavaliados img {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.maisavaliados li input:checked ~ img {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+}
+
+div.modelo{
+	padding: 20px;
+	width: 30vw;
+	height: 25vh;
+	min-width: 250px;
+	min-height: 100px;
+	background-color: gray;
+	border-radius: 7px;
+}
+
+
+
+/*edição de textos da página sobre*/
 div.sobresessão{
 	min-height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background:  url(sobrerw.jpg) no-repeat left;
+	padding-left: 15;
 }
 
-p.minitinicio{
-	font-size:  2.8em;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 600;
-	text-align: center;
-}
-
-p.subinicio{
-	font-size: 1.5em;
-	font-family:  serif;
-	text-align:  center;
-}
-
-/*edição de textos da página sobre*/
 p.sobretitulo{
 	font-family: 'Open Sans', sans-serif;
-	padding: 5vw 5vh;
-	background-color: #eceff1;
+	padding: 0vw 5vh;
 	min-width: 75px;
 	width:  75%;
 	font-size:  30px;
@@ -136,7 +337,6 @@ p.sobretitulo{
 p.sobresubtitulo{
 	font-family: 'Open Sans', sans-serif;
 	padding: 0vw 5vh;
-	background-color: #eceff1;
 	min-width: 75px;
 	width:  75%;
 	font-size:  20px;
@@ -145,7 +345,229 @@ p.sobresubtitulo{
 p.sobretexto{
 	font-family: 'Open Sans', sans-serif;
 	padding:  3vw 5vh;
-	background-color:  #eceff1;
 	min-width: 70px;
 	width:  75%;
+}
+
+.sobre{
+	background-color: #cbcbcb;
+}
+
+/*imagem destaque do início do site*/
+
+.imageminicial{
+	background: #cbcbcb	 url("homebg.png") no-repeat center center;
+	opacity: 0.94;
+	clear: both;
+	width: 100%;
+	height: 600px;
+}
+
+.cxtextodestaque{
+	padding: 180px;
+	clear: both;
+}
+
+h1.textodestaque{
+	font-family: helvetica;
+	font-size: 30px;
+	text-align: center;
+	color: #ffffff;
+	font-weight: 20;
+	margin-block-start: 0.7em;
+  margin-block-end: 0.7em;
+}
+
+
+
+/*Melhores avaliados*/
+.maisavaliados {
+  background-color: #3c4049;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.maisavalia {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px;
+  text-align: center;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.maisaval {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.maisav {
+		display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 600px;
+    height: 350px;
+    scroll-snap-align: center;
+    margin-right: 0px;
+    box-sizing: border-box;
+    background: white;
+    transform-origin: center center;
+    transform: scale(1);
+}
+
+.maisav {
+	 background-color: rgb(250, 246, 212);
+}
+
+.maisav a{
+	background: none;
+	border: none;
+}
+
+.escritateste{
+	font-size: 35px;
+	font-family: helvetica;
+}
+
+a.antepessoa,
+.maisavalia::before {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  left: 5%;
+}
+
+a.proxpessoa,
+.maisavalia::after {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  right: 5%;
+}
+
+.maisavalia::before,
+.maisavalia::after,
+.antepessoa,
+.proxpessoa {
+  position: absolute;
+  top: 48%;
+  width: 35px;
+  height: 35px;
+  border: solid black;
+  border-width: 0 4px 4px 0;
+  padding: 3px;
+  box-sizing: border-box;
+}
+
+.maisavalia::before,
+.maisavalia::after {
+  content: "";
+  z-index: 1;
+  background: none;
+  pointer-events: none;
+}
+
+.slidermaisaval {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  width: 200px;
+  margin-left: -100px;
+  text-align: center;
+}
+
+/*Página de Perguntas*/
+.titduv{
+	font-family: 'Merriweather', serif;
+	padding-left: 30px;
+	font-weight: 100;
+	font-size: 40px;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.subduv{
+	font-family: 'Merriweather', serif;
+	padding-left: 30px;
+	font-weight: 100;
+	font-size: 35px;
+}
+
+.textoduv{
+	font-family: serif;
+	padding: 5px 30px 30px 30px;
+	font-size: 25px;
+	text-align: justify;
+}
+
+
+/*Modelo*/
+.disponibilidade {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.disponibilidade input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.disponibilidade:hover input ~ .checkmark {
+  background-color: #8c8c8c;
+}
+
+.disponibilidade input:checked ~ .checkmark {
+  background-color: #31ff31;
+}
+
+.disponibilidade input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.disponibilidade .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  border-radius: 10px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.avatar {
+  width: 40px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0;
 }

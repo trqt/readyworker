@@ -24,10 +24,16 @@
 	});
 </script>
 
-{#each users as user}
-	<h3>
-		{user.name}
-	</h3>
-	<div>{user.description}</div>
-	<br />
-{/each}
+<article>
+	{#if users.length == 0}
+		<p class="title">404 - Nenhum usuário encontrado</p>
+	{:else}
+		{#each users as user}
+			<h3>
+				<a href={`/user/${user.ID}`}>{user.name}</a>
+			</h3>
+			<div>{user.description}</div>
+			<br />
+		{/each}
+	{/if}
+</article>

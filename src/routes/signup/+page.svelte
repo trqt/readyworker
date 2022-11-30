@@ -12,6 +12,7 @@
 	let category = '';
 	let password = '';
 	let password_check = '';
+	let role = 'worker';
 
 	let category_list: string[] = ['...'];
 	get('categories', '').then((res) => {
@@ -28,7 +29,7 @@
 		}
 
 		const data = {
-			role: 'worker',
+			role: role,
 			cpf: cpf,
 			name: name,
 			email: email,
@@ -100,12 +101,10 @@
 
 <main>
 	<form on:submit|preventDefault={onSubmit}>
+		<p class="title">Cadastro</p>
 		<div>
-			<label for="name">Avatar Upload</label>
 			{#if avatar}
-				<img id="avatar" src={avatar} width="256" height="256" alt="avatar" />
-			{:else}
-				<img id="avatar" src="avatar.png" width="256" height="256" alt="avatar" />
+				<img id="avatar" class="cat" src={avatar} width="256" height="256" alt="avatar" />
 			{/if}
 			<input
 				id="file-to-upload"
@@ -117,100 +116,90 @@
 				required
 			/>
 		</div>
-		<button on:click={() => fileInput.click()}>Upload</button>
-		<div>
-			<label for="name">CPF</label>
-			<input
-				type="text"
-				name="cpf"
-				size="11"
-				maxlength="11"
-				placeholder="12345678910"
-				pattern="[0-9.]+"
-				required
-				bind:value={cpf}
-			/>
-		</div>
-		<div>
-			<label for="name">Nome</label>
-			<input
-				type="text"
-				name="name"
-				maxlength="50"
-				placeholder="João Ninguém"
-				required
-				bind:value={name}
-			/>
-		</div>
-		<div>
-			<label for="name">E-mail</label>
-			<input
-				type="email"
-				name="email"
-				maxlength="50"
-				placeholder="email@exemplo.com"
-				required
-				bind:value={email}
-			/>
-		</div>
-		<div>
-			<label for="name">Telefone</label>
-			<input
-				type="tel"
-				name="phone"
-				size="20"
-				maxlength="20"
-				placeholder="(11) 91234-5678"
-				required
-				bind:value={phone}
-			/>
-		</div>
-		<div>
-			<label for="categories">Escolha uma categoria:</label>
-			<select id="categories" name="categories" bind:value={category}>
-				{#each category_list as category}
-					<option value={category}>{category}</option>
-				{/each}
-			</select>
-		</div>
-		<div>
-			<label for="name">Descrição</label>
-			<textarea
-				name="desc"
-				maxlength="500"
-				placeholder="Sou um pedreiro, trabalho há 5 anos com a profissão..."
-				required
-				bind:value={desc}
-			/>
-		</div>
-		<div>
-			<label for="name">Senha</label>
-			<input type="password" required name="password" bind:value={password} />
-		</div>
-		<div>
-			<label for="name">Confirmar senha</label>
-			<input type="password" required name="password" bind:value={password_check} />
-		</div>
-		<button type="submit">Enviar</button>
+		<button on:click={() => fileInput.click()} class="submit-btn">Upload da foto de perfil</button
+		><br />
+
+		<input
+			type="text"
+			name="name"
+			class="cadastro"
+			maxlength="50"
+			placeholder="Nome completo"
+			bind:value={name}
+			required
+		/><br />
+		<input
+			type="text"
+			class="cadastro"
+			placeholder="CPF"
+			name="cpf"
+			size="11"
+			maxlength="11"
+			minlength="11"
+			pattern="[0-9.]+"
+			bind:value={cpf}
+			required
+		/><br />
+
+		<input
+			type="email"
+			class="cadastro"
+			name="email"
+			placeholder="Email"
+			maxlength="50"
+			bind:value={email}
+			required
+		/><br />
+		<input
+			type="tel"
+			name="phone"
+			size="20"
+			maxlength="20"
+			class="cadastro"
+			placeholder="Telefone"
+			bind:value={phone}
+			required
+		/><br />
+		<textarea
+			class="cadastrolongo"
+			name="desc"
+			maxlength="500"
+			placeholder="Descrição"
+			bind:value={desc}
+			required
+		/><br />
+		<label for="categories" class="cat">Escolha uma categoria:</label>
+		<select id="categories" class="cat" name="categories" bind:value={category} required>
+			{#each category_list as category}
+				<option value={category}>{category}</option>
+			{/each}
+		</select><br />
+		<input
+			type="password"
+			class="cadastro"
+			name="password"
+			placeholder="Senha"
+			bind:value={password}
+			minlength="8"
+			required
+		/><br />
+		<input
+			type="password"
+			class="cadastro"
+			name="password"
+			placeholder="Repita a senha"
+			minlength="8"
+			bind:value={password_check}
+			required
+		/><br />
+		<input type="radio" class="tos" id="worker" name="role" value="worker" bind:group={role} />
+		<label for="worker">Trabalhador</label><br />
+		<input type="radio" class="tos" id="hirer" name="role" value="hirer" bind:group={role} />
+		<label for="hirer">Contrantante</label><br />
+
+		<input type="checkbox" class="tos" id="tos" name="tos" value="tos" required />
+		<label for="tos">Li e concordo com os <a href="/tos">Termos de Uso</a></label>
+
+		<button type="submit" class="submit-btn">Enviar</button>
 	</form>
 </main>
-
-<style>
-	* {
-		box-sizing: border-box;
-	}
-	form {
-		display: flex;
-		flex-direction: column;
-		width: 300px;
-	}
-
-	form > div {
-		display: flex;
-		justify-content: space-between;
-	}
-
-	form > div + * {
-		margin-top: 10px;
-	}
-</style>
