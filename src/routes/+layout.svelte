@@ -50,16 +50,16 @@
 <div class="outroslinks">
 	<div class="colink">
 		<ul>
-			<li><a class="linkext" href="/faq">Duvidas com o site</a></li>
-			<li><a class="linkext" href="/faq">Duvidas ao empregar</a></li>
-			<li><a class="linkext" href="/faq">Duvidas de Contratante</a></li>
+			<li><a class="linkext" href="/faq">Dúvidas com o site</a></li>
+			<li><a class="linkext" href="/faq">Dúvidas ao empregar</a></li>
+			<li><a class="linkext" href="/faq">Dúvidas de Contratante</a></li>
 		</ul>
 	</div>
 	<div class="colink">
 		<ul>
 			<li><a class="linkext" href="/faq">Problemas com contas falsas</a></li>
 			<li><a class="linkext" href="/tos">Termos de uso</a></li>
-			<li><a class="linkext" href="/about">Mais de nosso trabalho</a></li>
+			<li><a class="linkext" href="/about">Mais sobre nosso trabalho</a></li>
 		</ul>
 	</div>
 </div>
