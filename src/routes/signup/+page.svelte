@@ -50,7 +50,7 @@
 		}).then((res) => {
 			if (res.ok && browser) {
 				if (browser) {
-					alert('PERFIL CRIADO 👍');
+					alert('Bem-vindo ao ReadyWorker!');
 					window.location.href = '/login';
 				}
 			} else if (!res.ok) {

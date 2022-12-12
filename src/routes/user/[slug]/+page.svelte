@@ -83,12 +83,19 @@
 		<h3>Requisição de trabalho</h3>
 		<form action="" on:submit|preventDefault={create_gig}>
 			Descrição:<br />
-			<textarea name="gig_desc" id="gig_desc" cols="30" rows="10" required bind:value={gig_desc} />
+			<textarea
+				name="gig_desc"
+				id="gig_desc"
+				cols="30"
+				rows="10"
+				required
+				bind:value={gig_desc}
+			/><br />
 			<button>Requisitar trabalho</button>
 		</form>
 	{/if}
 	<h3>Trabalha como: {user.category}</h3>
-	<h3>Avaliação média: {rating}</h3>
+	{#if !isNaN(rating / 2)}<h3>Avaliação média: {rating / 2}</h3>{/if}
 	<h2>Comentários</h2>
 	{#each comments as comment}
 		<h3>
@@ -102,12 +109,12 @@
 		<br />
 		<!-- TODO: Admin -->
 
-		{#if comment.author_id == $userid}
+		<!--{#if comment.author_id == $userid}
 			<button
 				on:click={() => {
 					delete_comment(comment.ID);
 				}}>Deletar comentário</button
 			>
-		{/if}
+		{/if}-->
 	{/each}
 </article>

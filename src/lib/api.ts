@@ -3,10 +3,10 @@ const base = 'https://readyworker.com.br';
 async function send(method: any, path: string, data: unknown, token: string) {
   const opts: any = { method, headers: {} };
 
-  if (data) {
-    opts.headers['Content-Type'] = 'application/json';
-    opts.body = JSON.stringify(data);
-  }
+  //if (data) {
+  opts.headers['Content-Type'] = 'application/json';
+  opts.body = JSON.stringify(data);
+  //}
 
   if (token) {
     opts.headers['Authorization'] = `Bearer ${token}`;
@@ -43,14 +43,14 @@ export function get(path: string, token: string) {
     });
 }
 
-export function del(path: string, token: string) {
-  return send('DELETE', path, null, token);
+export async function del(path: string, token: string) {
+  return await send('DELETE', path, null, token);
 }
 
-export function post(path: string, data: unknown, token: string) {
-  return send('POST', path, data, token);
+export async function post(path: string, data: unknown, token: string) {
+  return await send('POST', path, data, token);
 }
 
-export function put(path: string, data: unknown, token: string) {
-  return send('PUT', path, data, token);
+export async function put(path: string, data: unknown, token: string) {
+  return await send('PUT', path, data, token);
 }
