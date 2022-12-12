@@ -7,6 +7,7 @@
 
 	if ($token == '') {
 		if (browser) {
+			alert('É preciso estar cadastrado para pesquisar.');
 			window.location.href = '/login';
 		}
 	}

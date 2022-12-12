@@ -31,6 +31,9 @@
 				if (browser) {
 					window.location.href = '/';
 				}
+			})
+			.catch((error) => {
+				alert('Erro ao logar.');
 			});
 	}
 </script>

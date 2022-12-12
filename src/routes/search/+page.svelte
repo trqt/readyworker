@@ -3,8 +3,8 @@
 
 	import { get } from '$lib/api';
 
-	let category: string = '';
-	let category_list: string[] = ['...'];
+	let category = '';
+	let category_list = ['...'];
 	get('categories', '').then((res) => {
 		category_list = res;
 	});
@@ -19,12 +19,11 @@
 <article>
 	<form on:submit|preventDefault={searchWorker}>
 		<label for="categories">Escolha uma categoria da lista:</label>
-		<input list="categories" name="category" id="category" bind:value={category} />
-		<datalist id="categories">
+		<select id="categories" bind:value={category}>
 			{#each category_list as category}
 				<option value={category}>{category}</option>
 			{/each}
-		</datalist>
+		</select>
 		<button type="submit">Pesquisar</button>
 	</form>
 </article>

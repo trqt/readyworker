@@ -51,7 +51,7 @@
 	<div class="colink">
 		<ul>
 			<li><a class="linkext" href="/faq">Duvidas com o site</a></li>
-			<li><a class="linkext" href="/faq">Duvidas de empregagem</a></li>
+			<li><a class="linkext" href="/faq">Duvidas ao empregar</a></li>
 			<li><a class="linkext" href="/faq">Duvidas de Contratante</a></li>
 		</ul>
 	</div>

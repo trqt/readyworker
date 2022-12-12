@@ -45,7 +45,7 @@ textarea.cadastrolongo {
 }
 
 input.login {
-	width: calc(40vw + 100px);
+	width: 50vw;
 	border: 2px solid #aaa;
 	margin: 8px 0px;
 	outline: none;
@@ -73,7 +73,6 @@ input.login {
 
 button.submit-btn {
 	width: 50vw;
-	min-height: calc(5vh + 10px);
 	border: 2px solid #aaa;
 	margin: 8px 0;
 	margin-left: 60px;
@@ -155,13 +154,14 @@ a.linkext {
 }
 
 .outroslinksex {
-  display: flex;
-  justify-content: center;
-  vertical-align: middle;
-  list-style: none;
-  float: left;
-  width: 98vw;
-  position: absolute;
+	display: flex;
+	justify-content: center;
+	vertical-align: middle;
+	list-style: none;
+	float: left;
+	width: 98vw;
+	position: absolute;
+	bottom: 10px;
   background-color: rgb(37, 37, 39);
 }
 
@@ -225,20 +225,12 @@ a.linkextex {
 }
 
 #menu-horiz ul li a {
-    text-decoration: none;
-    padding: 2%;
-    display: inline-block;
-    color: #dfdfdf;
-    transition: background 0.5s;
-    vertical-align: middle;
-    width: 15%;
-    height: 15%;
-    min-width: 5px;
-    min-height: 5px;
-    max-width: 100px;
-    max-height: 50px;
-    font-family: sans-serif;
-    font-size: calc(40% + 8px);
+	text-decoration: none;
+	padding: 15px;
+	display: inline-block;
+	color: #dfdfdf;
+	transition: background 0.5s;
+	vertical-align: middle;
 }
 
 #menu-horiz ul li a:hover {
@@ -363,7 +355,7 @@ p.sobretexto {
 }
 
 .cxtextodestaque {
-  padding-top: 10em;
+	padding: 180px;
 	clear: both;
 }
 

@@ -1,4 +1,4 @@
-const base = 'http://localhost';
+const base = 'https://readyworker.com.br';
 
 async function send(method: any, path: string, data: unknown, token: string) {
   const opts: any = { method, headers: {} };
