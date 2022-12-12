@@ -4,7 +4,7 @@
 	<h3>DE CONSENTIMENTO PARA TRATAMENTO DE DADOS PESSOAIS DE CANDIDATO.</h3>
 	<br />
 	Este documento visa registrar a manifestação livre, informada e inequívoca pela qual o CANDIDATO concorrendo
-	à vaga de emprego disponibilizada pelo portal Readyworker.COM.BR (“Readyworky”) concorda com o tratamento
+	à vaga de emprego disponibilizada pelo portal Readyworker.COM.BR (“Readyworker”) concorda com o tratamento
 	de seus dados pessoais para finalidade específica, em conformidade com a Lei nº 13.709 (Lei Geral de
 	Proteção de Dados Pessoais – LGPD).
 	<br />
