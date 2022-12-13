@@ -24,6 +24,6 @@
 				<option value={category}>{category}</option>
 			{/each}
 		</select>
-		<button type="submit">Pesquisar</button>
+		<button type="submit" class="search-btn">Pesquisar</button>
 	</form>
 </article>

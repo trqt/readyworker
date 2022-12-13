@@ -7,6 +7,18 @@
 article {
 	margin: 3%;
 }
+
+select {
+  background: #cbcbcb; 
+  padding: 4px;
+  border: medium none;
+  border-radius: 6px;
+}
+.search-btn {
+  border-radius: 6px;
+  padding: 4px;
+}
+
 a:visited,
 a {
 	text-decoration: none;
@@ -333,7 +345,7 @@ div.sobresessão {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding-left: 15;
+	padding: 0 5%;
 }
 
 p.sobretitulo {
@@ -346,7 +358,7 @@ p.sobretitulo {
 
 p.sobresubtitulo {
 	font-family: 'Open Sans', sans-serif;
-	padding: 0vw 5vh;
+	padding: 0 3vw;
 	min-width: 75px;
 	width: 75%;
 	font-size: 20px;
@@ -354,7 +366,7 @@ p.sobresubtitulo {
 
 p.sobretexto {
 	font-family: 'Open Sans', sans-serif;
-	padding: 3vw 5vh;
+	padding: 3vh 3vw;
 	min-width: 70px;
 	width: 75%;
 }
@@ -578,3 +590,76 @@ a.proxpessoa,
 	overflow: hidden;
 	margin: 0;
 }
+
+.trabalhosinicial{
+	padding: 1em 0 1.2em;
+  text-align: center;
+  display: block;
+}
+
+p.trabalhinhos {
+  font-family: 'Merriweather', serif;
+  text-decoration: none;
+  padding: 0vw 5vh;
+  min-width: 1em;
+  font-size: 24pt;
+  padding-right: 1.2em;
+}
+
+.trabalhosinicial ul{
+  list-style-type: none;
+  clear: both;
+  overflow: hidden;
+  width: 36vw;
+  margin: 0 auto;
+}
+
+.trabalhosinicial ul.faix1 {
+	margin-top: 37px;
+  margin-bottom: 20px;
+}
+
+.trabalhosinicial ul.faix2 {
+	margin-top: 37px;
+  margin-bottom: 20px;
+}
+
+.trabalhosinicial ul li{
+	width: 212px;
+  height: 145px;
+  float: left;
+  margin-right: 20px;
+  font-size: 2em;
+  font-family: 'Open Sans',sans-serif;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  background: url(trabalhos.png) no-repeat;
+}
+
+.trabalhoinicial ul li a {
+  margin-top: 70px;
+  text-shadow: 0 1px 2px #3c3c3c;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -ms-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.trabalhosinicial ul li.Eletricista{
+	background-position: 0 0;
+}
+
+.trabalhosinicial ul li.DW{
+	background-position: 0 -145px;
+}
+
+.trabalhosinicial ul li.Faxineiro{
+	background-position: 0 -292px;
+}
+
+.trabalhosinicial ul li.Pintor{
+	background-position: 0 -438px;
+}
+
