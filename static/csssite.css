@@ -169,7 +169,7 @@ a.linkext {
 	font-family: helvetica;
 	font-size: 15px;
 	text-align: left;
-	color: #132f81;
+	color: #dfdfdf;
 }
 
 .linkext:hover {
@@ -183,7 +183,7 @@ a.linkext {
   vertical-align: middle;
   list-style: none;
   float: left;
-  width: 98vw;
+  width: 100%;
   position: absolute;
   background-color: rgb(37, 37, 39);
 }

@@ -47,7 +47,7 @@
 
 <slot />
 
-<div class="outroslinks">
+<div class="outroslinksex">
 	<div class="colink">
 		<ul>
 			<li><a class="linkext" href="/faq">Dúvidas com o site</a></li>
