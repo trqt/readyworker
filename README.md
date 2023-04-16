@@ -1,3 +1,8 @@
 # ReadyWorker
+ReadyWorker front-end
 
-Front-end do ReadyWorker
+run, the backend must be running:
+```sh
+$ npm i
+$ npm run dev 
+``
